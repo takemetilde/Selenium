@@ -14,6 +14,8 @@ public class Base {
 		
 		@Override
 		protected void before() throws Throwable {
+			System.setProperty("webdriver.gecko.driver",
+					"C:\\Users\\hongiaher\\Desktop\\Eclipse Workspace\\Selenium\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 

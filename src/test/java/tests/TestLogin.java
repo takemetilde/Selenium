@@ -2,26 +2,15 @@ package test.java.tests;
 
 import org.junit.Test;
 import org.junit.Before;
-import org.junit.After;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.remote.DesiredCapabilities;
-
 import static org.junit.Assert.*;
 import test.java.pageobjects.Login;
 
-public class TestLogin {
+public class TestLogin extends Base{
 
-	private WebDriver driver;
 	private Login login;
 
 	@Before
 	public void setUp() {
-		System.setProperty("webdriver.gecko.driver",
-				"C:\\Users\\hongiaher\\Desktop\\Eclipse Workspace\\Selenium\\geckodriver.exe");
-		//DesiredCapabilities cap = DesiredCapabilities.firefox();
-		//cap.setCapability("marionette", true);		
-		driver = new FirefoxDriver();
 		login = new Login(driver);
 	}
 
@@ -37,10 +26,5 @@ public class TestLogin {
 		assertTrue("failure message wasn't present after providing bogus credentials", 
 				login.failureMessagePresent());
 	}
-
-	@After
-	public void tearDown() {
-						driver.quit();
-		}
 }
 

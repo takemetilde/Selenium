@@ -2,20 +2,15 @@ package test.java.tests;
 
 import org.junit.Test;
 import org.junit.Before;
-import org.junit.After;
 import static org.junit.Assert.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import test.java.pageobjects.DynamicLoading;
 
-public class TestDynamicLoading {
+public class TestDynamicLoading extends Base{
 
-	private WebDriver driver;
 	private DynamicLoading dynamicLoading;
 
 	@Before
 	public void setUp() {
-		driver = new FirefoxDriver();
 		dynamicLoading = new DynamicLoading(driver);
 	}
 
@@ -31,10 +26,5 @@ public class TestDynamicLoading {
 		dynamicLoading.loadExample("2");
 		assertTrue("finish text didn't render after loading",
 				dynamicLoading.finishTextPresent());
-	}
-
-	@After
-	public void tearDown() {
-		driver.quit();
 	}
 }

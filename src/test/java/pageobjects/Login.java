@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import static org.junit.Assert.*;
 
-public class Login extends Base{
-	
-	private WebDriver driver;
+public class Login extends BaseObjects{
 	
 	By usernameLocator = By.id("username");
 	By passwordLocator = By.id("password");
@@ -16,7 +14,7 @@ public class Login extends Base{
 
 	public Login(WebDriver driver) {
 		super(driver);
-		driver.get("http://the-internet.herokuapp.com/login");
+		visit("/login");
 		assertTrue("The login form is not present",
 				driver.findElement(loginFormLocator).isDisplayed());
 	}

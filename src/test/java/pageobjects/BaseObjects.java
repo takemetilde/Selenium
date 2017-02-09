@@ -8,11 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import test.java.tests.Config;
 
-public class Base implements Config{
+public class BaseObjects implements Config{
 
+	//Store instance of Selenium webdriver
 	private WebDriver driver;
 
-	public Base(WebDriver driver) {
+	public BaseObjects(WebDriver driver) {
 		this.driver = driver;
 	}
 

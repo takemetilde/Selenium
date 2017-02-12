@@ -13,6 +13,7 @@ public class BaseObjects implements Config{
 	//Store instance of Selenium webdriver
 	private WebDriver driver;
 
+	
 	public BaseObjects(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -21,6 +22,7 @@ public class BaseObjects implements Config{
 		if (url.contains("http")) {
 			driver.get(url);
 		} else {
+			//baseUrl ref through Config
 			driver.get(baseUrl + url);
 		}
 	}

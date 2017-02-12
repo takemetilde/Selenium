@@ -12,13 +12,14 @@ public class TestLogin extends BaseTests{
 	//Setup method: load before testing method
 	@Before
 	public void setUp() {
-		//Instantiate Login object
+		//Instantiate Login object with driver from BaseTests
 		login = new Login(driver);
 	}
 
 	//Testing method
 	@Test
 	public void succeeded() {
+		//Calls "with" method using username and password
 		login.with("tomsmith", "SuperSecretPassword!");
 		assertTrue("success message not present", login.successMessagePresent());
 	}

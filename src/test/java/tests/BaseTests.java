@@ -1,5 +1,7 @@
 package test.java.tests;
 
+import java.io.File;
+
 import org.junit.Rule;
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +17,12 @@ public class BaseTests {
 		
 		@Override
 		protected void before() throws Throwable {
+			//Auto-finds firefox geckodriver
+			File f = new File("./geckodriver.exe");
+			String path = f.getAbsolutePath().replace("\\", "\\\\");
+			
 			System.setProperty("webdriver.gecko.driver",
-					"C:\\Users\\hongiaher\\Desktop\\Eclipse Workspace\\Selenium\\geckodriver.exe");
+					path);
 			driver = new FirefoxDriver();
 		}
 
